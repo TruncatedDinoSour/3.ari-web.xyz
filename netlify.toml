@@ -1,0 +1,76 @@
+[build]
+    command = "python3 ./scripts/blog static"
+
+[[redirects]]
+    from = "/git/*"
+    to = "https://ari-web.xyz/gh/3.ari-web.xyz/:splat"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "/favicon.ico"
+    to = "https://ari-web.xyz/favicon.ico"
+    status = 200
+    force = true
+
+[[redirects]]
+    from = "/robots.txt"
+    to = "https://ari-web.xyz/robots.txt"
+    status = 200
+    force = true
+
+[[redirects]]
+    from = "/sitemap.xml"
+    to = "https://ari-web.xyz/sitemap.xml"
+    status = 200
+    force = true
+
+[[redirects]]
+    from = "/blogs/:blog"
+    to = "https://legacy.blog.ari-web.xyz/blogs/:blog"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "/netlify.toml"
+    to = "https://ari-web.xyz/404.3.xyz"
+    status = 404
+    force = true
+
+[[redirects]]
+    from = "/*"
+    to = "https://ari-web.xyz/404.3.xyz"
+    status = 404
+    force = false
+
+# Processing
+[build.processing]
+    skip_processing = false
+
+[build.processing.html]
+    pretty_urls = true
+
+[build.processing.css]
+    bundle = true
+    minify = true
+
+[build.processing.js]
+    bundle = true
+    minify = true
+
+[build.processing.images]
+    compress = false
+# --------------
+
+
+[[headers]]
+    for = "/*"
+
+    [headers.values]
+        Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+        X-Frame-Options = "deny"
+        X-Content-Type-Options = "nosniff"
+        Content-Security-Policy = "upgrade-insecure-requests"
+        X-Permitted-Cross-Domain-Policies = "none"
+        Referrer-Policy = "no-referrer"
+
