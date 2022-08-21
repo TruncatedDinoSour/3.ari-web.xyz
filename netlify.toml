@@ -1,6 +1,3 @@
-[build]
-    command = "python3 ./scripts/blog static"
-
 [[redirects]]
     from = "/git/*"
     to = "https://ari-web.xyz/gh/3.ari-web.xyz/:splat"
@@ -23,12 +20,6 @@
     from = "/sitemap.xml"
     to = "https://ari-web.xyz/sitemap.xml"
     status = 200
-    force = true
-
-[[redirects]]
-    from = "/blogs/:blog"
-    to = "https://legacy.blog.ari-web.xyz/blogs/:blog"
-    status = 301
     force = true
 
 [[redirects]]
