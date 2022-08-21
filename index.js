@@ -2,13 +2,12 @@
 
 const THREE = document.getElementById("3");
 var END = false;
+const END_DATE = new Date(2025, 8, 10, 0, 0, 0, 0).getTime();
 
 function three_handler() {
     if (END) return;
 
-    let time =
-        (new Date(2025, 8, 10, 0, 0, 0, 0).getTime() - new Date().getTime()) /
-        1000;
+    let time = (END_DATE - new Date().getTime()) / 1000;
     let out = "Nothing left, goodbye :)";
 
     if (time > 0) out = `Only ${time} left`;
